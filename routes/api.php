@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactUsController;
+use App\Http\Controllers\PassengerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +26,7 @@ Route::post('/register', [AuthController::class,'register']);
 Route::post('login', [AuthController::class,'login']);
 
 Route::post('/logout', [AuthController::class,'logout'])->middleware('auth:api');
+
+Route::post('/contact',[ContactUsController::class,'contact']);
+
+Route::post('/passenger',[PassengerController::class,'passenger']);
